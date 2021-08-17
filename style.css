@@ -1,3 +1,24 @@
+/* Add a dark grey background color to the navigation bar */
+.topnav {
+    background-color: darkgrey;
+    padding-left: 15px;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.topnav a.active,
+.topnav a:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
 /* Space the content of the chart evenly and at the bottom */
 .chart {
     display: flex;

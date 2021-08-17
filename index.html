@@ -4,10 +4,16 @@
         <meta charset="UTF-8">
         <title>Algorithm Visualizer</title>
         <link rel="stylesheet" href="style.css">
+        <script src="src/algorithms/sorting/sort.js"></script>
+        <script src="src/algorithms/sorting/bubble.js"></script>
         <script src="src/chart.js"></script>
     </head>
     <body onload="shuffleBars()">
+        <ul id="topnav" class="topnav">
+            <a id="bubble" class="active" onclick="setBubble()">Bubble sort</a>
+        </ul>
         <div id="chart" class="chart"></div>
         <button onclick="shuffleBars()">Shuffle</button>
+        <button onclick="sortBars()">Sort</button>
     </body>
 </html>

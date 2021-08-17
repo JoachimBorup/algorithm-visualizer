@@ -1,4 +1,7 @@
 const num_of_values = 50;
+const sleep_time = 20;
+
+let algorithm = new BubbleSort();
 
 function shuffleBars() {
     const chart = document.getElementById("chart");
@@ -12,6 +15,10 @@ function shuffleBars() {
         const bar = createBar((num_of_values - arr[i]) * height, width);
         chart.appendChild(bar);
     }
+}
+
+function sortBars() {
+    algorithm.sort();
 }
 
 function createBar(height, width) {
@@ -54,4 +61,24 @@ function shuffle(arr) {
     }
   
     return arr;
+}
+
+function setActive(id) {
+    const topnav = document.getElementById("topnav").children;
+    
+    for (let i = 0; i < topnav.length; i++) {
+        topnav[i].className = "";
+    }
+
+    const sort = document.getElementById(id);
+    sort.className = "active";
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function setBubble() {
+   algorithm = new BubbleSort();
+   setActive("bubble");
 }
