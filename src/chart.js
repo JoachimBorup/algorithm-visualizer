@@ -82,3 +82,13 @@ function setBubble() {
    algorithm = new BubbleSort();
    setActive("bubble");
 }
+
+function setInsertion() {
+    algorithm = new InsertionSort();
+    setActive("insertion");
+}
+
+function setSelection() {
+    algorithm = new SelectionSort();
+    setActive("selection");
+}

@@ -6,11 +6,15 @@
         <link rel="stylesheet" href="style.css">
         <script src="src/algorithms/sorting/sort.js"></script>
         <script src="src/algorithms/sorting/bubble.js"></script>
+        <script src="src/algorithms/sorting/insertion.js"></script>
+        <script src="src/algorithms/sorting/selection.js"></script>
         <script src="src/chart.js"></script>
     </head>
     <body onload="shuffleBars()">
         <ul id="topnav" class="topnav">
             <a id="bubble" class="active" onclick="setBubble()">Bubble sort</a>
+            <a id="insertion" onclick="setInsertion()">Insertion sort</a>
+            <a id="selection" onclick="setSelection()">Selection sort</a>
         </ul>
         <div id="chart" class="chart"></div>
         <button onclick="shuffleBars()">Shuffle</button>
