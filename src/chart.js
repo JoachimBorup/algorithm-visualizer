@@ -75,6 +75,24 @@ function setActive(id) {
     sort.className = "active";
 }
 
+function setBrightness(i, j, brightness) {
+    const bars = document.getElementById("chart").children;
+    bars[i].style.filter = `brightness(${brightness})`;
+    bars[j].style.filter = `brightness(${brightness})`;
+}
+
+function getHeight(i) {
+    return array[i];
+}
+
+function setHeight(i, height) {
+    const chart = document.getElementById("chart");
+    const heightMultiplier = chart.clientHeight / num_of_values;
+
+    chart.children[i].style.height = `${height * heightMultiplier}px`;
+    array[i] = height;
+}
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
