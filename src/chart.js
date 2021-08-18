@@ -2,6 +2,7 @@ const num_of_values = 50;
 const sleep_time = 20;
 
 let algorithm = new BubbleSort();
+let array = [];
 
 function shuffleBars() {
     const chart = document.getElementById("chart");
@@ -9,10 +10,10 @@ function shuffleBars() {
 
     const height = chart.clientHeight / num_of_values;
     const width = chart.clientWidth / num_of_values;
-    const arr = createArr(num_of_values);
+    array = createArr(num_of_values);
     
     for (let i = 0; i < num_of_values; i++) {
-        const bar = createBar((num_of_values - arr[i]) * height, width);
+        const bar = createBar(array[i] * height, width);
         chart.appendChild(bar);
     }
 }
@@ -34,7 +35,7 @@ function createBar(height, width) {
 function createArr(length) {
     const arr = [];
 
-    for (let i = 0; i < length; i++) {
+    for (let i = 1; i <= length; i++) {
         arr.push(i);
     }
 
