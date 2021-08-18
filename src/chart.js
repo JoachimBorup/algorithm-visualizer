@@ -107,6 +107,11 @@ function setInsertion() {
     setActive("insertion");
 }
 
+function setQuick() {
+    algorithm = new QuickSort();
+    setActive("quick");
+}
+
 function setSelection() {
     algorithm = new SelectionSort();
     setActive("selection");
