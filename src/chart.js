@@ -124,6 +124,11 @@ function setInsertion() {
     setActive("insertion");
 }
 
+function setMerge() {
+    algorithm = new MergeSort();
+    setActive("merge");
+}
+
 function setQuick() {
     algorithm = new QuickSort();
     setActive("quick");
