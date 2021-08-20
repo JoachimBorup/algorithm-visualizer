@@ -138,3 +138,8 @@ function setSelection() {
     algorithm = new SelectionSort();
     setActive("selection");
 }
+
+function setShell() {
+    algorithm = new ShellSort();
+    setActive("shell");
+}

@@ -1,0 +1,19 @@
+class ShellSort extends Sort {
+    async sort() {
+        let h = 1;
+
+        while (h < num_of_values / 3) {
+            h = 3 * h + 1;
+        }
+
+        while (h >= 1) {
+            for (let i = h; i < num_of_values; i++) {
+                for (let j = i; j >= h && await this.less(j, j - h); j -= h) {
+                    await this.exch(j, j - h);
+                }
+            }
+
+            h = Math.floor(h / 3);
+        }
+    }
+}
