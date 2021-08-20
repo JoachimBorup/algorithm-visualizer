@@ -11,9 +11,10 @@
         <script src="src/algorithms/sorting/quick.js"></script>
         <script src="src/algorithms/sorting/selection.js"></script>
         <script src="src/algorithms/sorting/shell.js"></script>
+        <script src="src/algorithms/shuffling/knuth.js"></script>
         <script src="src/chart.js"></script>
     </head>
-    <body onload="shuffleBars()">
+    <body onload="setupBars(); shuffleBars()">
         <ul id="topnav" class="topnav">
             <a id="bubble" class="active" onclick="setBubble()">Bubble sort</a>
             <a id="insertion" onclick="setInsertion()">Insertion sort</a>

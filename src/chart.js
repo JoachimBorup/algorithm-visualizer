@@ -1,25 +1,30 @@
 const num_of_values = 50;
 const sleep_time = 20;
 
-let algorithm = new BubbleSort();
+let sortAlgorithm = new BubbleSort();
+let shuffleAlgorithm = new KnuthShuffle();
 let array = [];
 
-function shuffleBars() {
+function setupBars() {
     const chart = document.getElementById("chart");
     chart.innerHTML = "";
 
     const height = chart.clientHeight / num_of_values;
     const width = chart.clientWidth / num_of_values;
-    array = createArr(num_of_values);
     
     for (let i = 0; i < num_of_values; i++) {
-        const bar = createBar(array[i] * height, width);
+        const bar = createBar((i + 1) * height, width);
         chart.appendChild(bar);
+        array[i] = i + 1;
     }
 }
 
+function shuffleBars() {
+    shuffleAlgorithm.shuffle();
+}
+
 function sortBars() {
-    algorithm.sort();
+    sortAlgorithm.sort();
 }
 
 function createBar(height, width) {
@@ -30,38 +35,6 @@ function createBar(height, width) {
     bar.style.width = `${width}px`;
 
     return bar;
-}
-
-function createArr(length) {
-    const arr = [];
-
-    for (let i = 1; i <= length; i++) {
-        arr.push(i);
-    }
-
-    shuffle(arr);
-
-    return arr;
-}
-
-// https://stackoverflow.com/a/2450976/15207402
-function shuffle(arr) {
-    let currentIndex = arr.length;
-    let randomIndex;
-  
-    // While there remain elements to shuffle...
-    while (currentIndex !== 0) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-    
-        // And swap it with the current element.
-        const temp = arr[currentIndex];
-        arr[currentIndex] = arr[randomIndex];
-        arr[randomIndex] = temp;
-    }
-  
-    return arr;
 }
 
 function setActive(id) {
@@ -115,31 +88,31 @@ function sleep(ms) {
 }
 
 function setBubble() {
-   algorithm = new BubbleSort();
+   sortAlgorithm = new BubbleSort();
    setActive("bubble");
 }
 
 function setInsertion() {
-    algorithm = new InsertionSort();
+    sortAlgorithm = new InsertionSort();
     setActive("insertion");
 }
 
 function setMerge() {
-    algorithm = new MergeSort();
+    sortAlgorithm = new MergeSort();
     setActive("merge");
 }
 
 function setQuick() {
-    algorithm = new QuickSort();
+    sortAlgorithm = new QuickSort();
     setActive("quick");
 }
 
 function setSelection() {
-    algorithm = new SelectionSort();
+    sortAlgorithm = new SelectionSort();
     setActive("selection");
 }
 
 function setShell() {
-    algorithm = new ShellSort();
+    sortAlgorithm = new ShellSort();
     setActive("shell");
 }
