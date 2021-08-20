@@ -1,10 +1,10 @@
 class Sort {
     async less(i, j) {
-        setBrightness(i, j, 0.75);
+        markBars(i, j, 0.75);
         await sleep(sleep_time);
-        setBrightness(i, j, 1);
+        unmarkBars(i, j, 1);
         
-        return array[i] < array[j];
+        return getHeight(i) < getHeight(j);
     }
 
     async exch(i, j) {

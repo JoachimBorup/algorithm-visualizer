@@ -75,10 +75,27 @@ function setActive(id) {
     sort.className = "active";
 }
 
-function setBrightness(i, j, brightness) {
+function markBars(i, j) {
+    markBar(i);
+    markBar(j);
+}
+
+function markBar(i) {
+    setBrightness(i, 0.75);
+}
+
+function unmarkBars(i, j) {
+    unmarkBar(i);
+    unmarkBar(j);
+}
+
+function unmarkBar(i) {
+    setBrightness(i, 1);
+}
+
+function setBrightness(i, brightness) {
     const bars = document.getElementById("chart").children;
     bars[i].style.filter = `brightness(${brightness})`;
-    bars[j].style.filter = `brightness(${brightness})`;
 }
 
 function getHeight(i) {
