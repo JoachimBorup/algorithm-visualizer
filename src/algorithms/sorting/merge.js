@@ -20,12 +20,16 @@ class MergeSort extends Sort {
         let j = mid + 1;
 
         for (let k = lo; k <= hi; k++) {
+            markBar(k);
+
             this.aux[k] = getHeight(k);
+            
+            await sleep(sleep_time);
+            unmarkBar(k);
         }
 
         for (let k = lo; k <= hi; k++) {
             markBar(k);
-            await sleep(sleep_time);
 
             if (i > mid) {
                 setHeight(k, this.aux[j++]);
@@ -37,6 +41,7 @@ class MergeSort extends Sort {
                 setHeight(k, this.aux[i++]);
             }
 
+            await sleep(sleep_time);
             unmarkBar(k);
         }
     }

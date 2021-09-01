@@ -8,11 +8,14 @@ class Sort {
     }
 
     async exch(i, j) {
-        await sleep(sleep_time);
+        markBars(i, j);
 
         const temp = getHeight(i);
         setHeight(i, getHeight(j));
         setHeight(j, temp);
+        
+        await sleep(sleep_time);
+        unmarkBars(i, j);
     }
 
     async sort() {
