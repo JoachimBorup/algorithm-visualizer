@@ -14,17 +14,22 @@
         <script src="src/algorithms/shuffling/knuth.js"></script>
         <script src="src/chart.js"></script>
     </head>
-    <body onload="setupBars(); shuffleBars()">
+    <body onload="setup()">
         <ul id="topnav" class="topnav">
-            <a id="bubble" class="active" onclick="setBubble()">Bubble sort</a>
+            <a id="bubble" onclick="setBubble()">Bubble sort</a>
             <a id="insertion" onclick="setInsertion()">Insertion sort</a>
             <a id="merge" onclick="setMerge()">Mergesort</a>
-            <a id="quick" onclick="setQuick()">Quicksort</a>
+            <a id="quick" class="active" onclick="setQuick()">Quicksort</a>
             <a id="selection" onclick="setSelection()">Selection sort</a>
             <a id="shell" onclick="setShell()">Shellsort</a>
         </ul>
         <div id="chart" class="chart"></div>
         <button onclick="shuffleBars()">Shuffle</button>
         <button onclick="sortBars()">Sort</button>
+        <br>
+        <input type="range" min="1" max="5" value="3" class="slider" id="speedSlider">
+        <p id="speed"></p>
+        <input type="range" min="5" max="1000" value="250" class="slider" id="amountSlider">
+        <p id="amount"></p>
     </body>
 </html>

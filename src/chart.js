@@ -1,13 +1,20 @@
-const num_of_values = 50;
-const sleep_time = 20;
+let num_of_values;
+let sleep_time;
 
-let sortAlgorithm = new BubbleSort();
+let sortAlgorithm = new QuickSort();
 let shuffleAlgorithm = new KnuthShuffle();
 let array = [];
+
+function setup() {
+    setupRanges();
+    setupBars();
+    shuffleBars();
+}
 
 function setupBars() {
     const chart = document.getElementById("chart");
     chart.innerHTML = "";
+    array = [];
 
     const height = chart.clientHeight / num_of_values;
     const width = chart.clientWidth / num_of_values;
@@ -21,6 +28,56 @@ function setupBars() {
 
 function shuffleBars() {
     shuffleAlgorithm.shuffle();
+}
+
+function setupRanges() {
+    const speed_slider = document.getElementById("speedSlider");
+    const amount_slider = document.getElementById("amountSlider");
+    setSpeed(speed_slider.value);
+    setAmount(amount_slider.value);
+
+    speed_slider.oninput = function() {
+        setSpeed(this.value);
+    }
+
+    amount_slider.oninput = function() {
+        setAmount(this.value);
+    }
+}
+
+function setSpeed(value) {
+    const speed_text = document.getElementById("speed");
+
+    switch (value) {
+        case "1":
+            speed_text.innerHTML = "0.25x";
+            sleep_time = 100;
+            break;
+        case "2":
+            speed_text.innerHTML = "0.5x";
+            sleep_time = 50;
+            break;
+        case "3":
+            speed_text.innerHTML = "1x";
+            sleep_time = 25;
+            break;
+        case "4":
+            speed_text.innerHTML = "2x";
+            sleep_time = 10;
+            break;
+        case "5":
+            speed_text.innerHTML = "4x";
+            sleep_time = 1;
+            break;
+    }
+}
+
+function setAmount(value) {
+    const amount_text = document.getElementById("amount");
+    amount_text.innerHTML = value;
+
+    num_of_values = parseInt(value);
+    setupBars();
 }
 
 function sortBars() {
