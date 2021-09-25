@@ -25,12 +25,13 @@
             <a id="shell" onclick="setShell()">Shellsort</a>
         </div>
         <div id="chart" class="chart"></div>
-        <button onclick="shuffleBars()">Shuffle</button>
-        <button onclick="sortBars()">Sort</button>
-        <br>
-        <input type="range" min="1" max="5" value="3" class="slider" title="speedSlider" id="speedSlider">
-        <p id="speed"></p>
-        <input type="range" min="5" max="1000" value="250" class="slider" title="amountSlider" id="amountSlider">
-        <p id="amount"></p>
+        <div class="container">
+            <input type="range" min="1" max="5" value="3" class="slider" title="Speed" id="speedSlider">
+            <p id="speed"></p>
+            <button onclick="sortBars()">Sort</button>
+            <button onclick="shuffleBars()">Shuffle</button>
+            <input type="range" min="5" max="1000" value="250" class="slider" title="Amount" id="amountSlider">
+            <p id="amount"></p>
+        </div>
     </body>
 </html>
