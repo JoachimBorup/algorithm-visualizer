@@ -1,8 +1,8 @@
 let num_of_values;
 let sleep_time;
 
-let sortAlgorithm = new QuickSort();
-let shuffleAlgorithm = new KnuthShuffle();
+let sort_algorithm = new QuickSort();
+let shuffle_algorithm = new KnuthShuffle();
 let array = [];
 
 function setup() {
@@ -26,8 +26,22 @@ function setupBars() {
     }
 }
 
+function createBar(height, width) {
+    const bar = document.createElement("div");
+    bar.className = "bar";
+    
+    bar.style.height = `${height}px`;
+    bar.style.width = `${width}px`;
+
+    return bar;
+}
+
 function shuffleBars() {
-    shuffleAlgorithm.shuffle();
+    shuffle_algorithm.shuffle();
+}
+
+function sortBars() {
+    sort_algorithm.sort();
 }
 
 function setupRanges() {
@@ -78,20 +92,6 @@ function setAmount(value) {
 
     num_of_values = parseInt(value);
     setupBars();
-}
-
-function sortBars() {
-    sortAlgorithm.sort();
-}
-
-function createBar(height, width) {
-    const bar = document.createElement("div");
-    bar.className = "bar";
-    
-    bar.style.height = `${height}px`;
-    bar.style.width = `${width}px`;
-
-    return bar;
 }
 
 function setActive(id) {
@@ -145,31 +145,31 @@ function sleep(ms) {
 }
 
 function setBubble() {
-   sortAlgorithm = new BubbleSort();
+   sort_algorithm = new BubbleSort();
    setActive("bubble");
 }
 
 function setInsertion() {
-    sortAlgorithm = new InsertionSort();
+    sort_algorithm = new InsertionSort();
     setActive("insertion");
 }
 
 function setMerge() {
-    sortAlgorithm = new MergeSort();
+    sort_algorithm = new MergeSort();
     setActive("merge");
 }
 
 function setQuick() {
-    sortAlgorithm = new QuickSort();
+    sort_algorithm = new QuickSort();
     setActive("quick");
 }
 
 function setSelection() {
-    sortAlgorithm = new SelectionSort();
+    sort_algorithm = new SelectionSort();
     setActive("selection");
 }
 
 function setShell() {
-    sortAlgorithm = new ShellSort();
+    sort_algorithm = new ShellSort();
     setActive("shell");
 }

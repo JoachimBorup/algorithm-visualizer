@@ -8,8 +8,8 @@ class ShellSort extends Sort {
 
         while (h >= 1) {
             for (let i = h; i < num_of_values; i++) {
-                for (let j = i; j >= h && await this.less(j, j - h); j -= h) {
-                    await this.exch(j, j - h);
+                for (let j = i; j >= h && await super.less(j, j - h); j -= h) {
+                    await super.exch(j, j - h);
                 }
             }
 
